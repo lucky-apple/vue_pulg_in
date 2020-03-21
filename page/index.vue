@@ -15,6 +15,10 @@
       <li :class="{'action':index==sumPage}" @click="cutPage(10)">{{sumPage}}</li>
       <li @click="rightMove">></li>
     </ul>
+    <div class="show-text">
+      当前{{index}}页
+      共{{sumPage}}页
+    </div>
   </div>
 </template>
 
@@ -45,13 +49,27 @@ export default {
         this.showRight = false;
       }
       if (this.index <= 4) {
+        this.s = 0
         this.showLeft = false;
       }
+      if (this.index < this.sumPage - 3) {
+        this.showRight = true;
+      }
+      this.$emit("cut-page", this.index)
     }
   },
   methods: {
     cutPage(index) {
       //改变页
+      if (index == this.sumPage) {
+        this.s = index - 7;
+      }
+      if(index == this.sumPage - 2) {
+        this.s = index - 5
+      }
+      if (index >= 4 && index <= this.sumPage - 3 && index != this.sumPage) {
+        this.s = index - 4;
+      }
       this.index = index;
     },
     LeftMove() {
@@ -73,8 +91,14 @@ export default {
 
 <style lang="scss" scoped>
 .apple-page {
+  display: flex;
+  .show-text {
+    line-height: 30px;
+  }
   ul {
+    margin: 0px;
     list-style: none;
+    overflow: hidden;
     li {
       width: 30px;
       height: 30px;
