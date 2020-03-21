@@ -1,4 +1,4 @@
-# 分页参加的使用
+# 分页插件的使用
 
 ```
 <apple-page :sumPage="10" @cut-page="cutPage"/>
