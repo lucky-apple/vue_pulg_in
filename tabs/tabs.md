@@ -23,5 +23,5 @@ data() {
 v-model/value 类型String
 name 标签的值 类型String
 label标签文字 类型String
-@on-click 点击事件 参数改组件的实例
+@on-click 点击事件 参数该组件的实例
 ```
