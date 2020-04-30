@@ -1,4 +1,4 @@
-# Alter插件的使用
+﻿# Alter插件的使用
 
 ```
 <apple-alert type="info" theme="dark" closable title"标题" description="描述"></apple-alert>
@@ -17,4 +17,4 @@ description(描述) 类型String
 ```
 title
 description
-``
+```
